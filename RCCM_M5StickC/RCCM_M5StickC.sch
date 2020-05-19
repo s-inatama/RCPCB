@@ -49,12 +49,12 @@ $EndDescr
 $Comp
 L Conn_01x06 S1
 U 1 1 5EB9082C
-P 1200 1150
-F 0 "S1" H 1200 1450 50  0000 C CNN
-F 1 "Conn_01x06" H 1200 750 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 1200 1150 50  0001 C CNN
-F 3 "" H 1200 1150 50  0001 C CNN
-	1    1200 1150
+P 2950 1150
+F 0 "S1" H 2950 1450 50  0000 C CNN
+F 1 "Conn_01x06" H 2950 750 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 2950 1150 50  0001 C CNN
+F 3 "" H 2950 1150 50  0001 C CNN
+	1    2950 1150
 	0    1    -1   0   
 $EndComp
 $Comp
@@ -71,12 +71,12 @@ $EndComp
 $Comp
 L Conn_01x06 S3
 U 1 1 5EB908B2
-P 2950 1150
-F 0 "S3" H 2950 1450 50  0000 C CNN
-F 1 "Conn_01x06" H 2950 750 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 2950 1150 50  0001 C CNN
-F 3 "" H 2950 1150 50  0001 C CNN
-	1    2950 1150
+P 1200 1150
+F 0 "S3" H 1200 1450 50  0000 C CNN
+F 1 "Conn_01x06" H 1200 750 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 1200 1150 50  0001 C CNN
+F 3 "" H 1200 1150 50  0001 C CNN
+	1    1200 1150
 	0    1    -1   0   
 $EndComp
 $Comp

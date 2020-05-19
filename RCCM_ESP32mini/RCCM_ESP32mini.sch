@@ -739,4 +739,23 @@ Wire Wire Line
 Wire Wire Line
 	5650 4450 5650 4350
 Connection ~ 5650 4350
+Text GLabel 3300 3250 0    60   Input ~ 0
+MODEd
+Wire Wire Line
+	3300 3250 3400 3250
+$Comp
+L Conn_01x02 J2
+U 1 1 5EC22177
+P 3600 3250
+F 0 "J2" H 3600 3350 50  0000 C CNN
+F 1 "Conn_01x02" H 3600 3050 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x01_Pitch2.54mm" H 3600 3250 50  0001 C CNN
+F 3 "" H 3600 3250 50  0001 C CNN
+	1    3600 3250
+	1    0    0    -1  
+$EndComp
+Text GLabel 3300 3350 0    60   Input ~ 0
+GND
+Wire Wire Line
+	3300 3350 3400 3350
 $EndSCHEMATC

@@ -1,4 +1,4 @@
-(pcb "C:\usr\job\Active\PCB Shield\xDevelopment\RCCM_ESP32mini\RCCM_ESP32mini.dsn"
+(pcb C:\usr\job\Project\Git\RCPCB\RCCM_ESP32mini\RCCM_ESP32mini.dsn
   (parser
     (string_quote ")
     (space_in_quoted_tokens on)
@@ -24,8 +24,6 @@
       (path pcb 0  76200 -92710  76200 -43180  114300 -43180  114300 -92710
             76200 -92710  76200 -92710)
     )
-    (keepout "" (polygon F.Cu 0  114300 -92710  85090 -92710  85090 -88900  114300 -88900))
-    (keepout "" (polygon B.Cu 0  114300 -92710  85090 -92710  85090 -88900  114300 -88900))
     (via "Via[0-1]_600:400_um")
     (rule
       (width 400)
@@ -61,6 +59,7 @@
     )
     (component Pin_Headers:Pin_Header_Straight_2x01_Pitch2.54mm
       (place J1 77470 -88900 front 90 (PN Conn_01x02))
+      (place J2 86360 -76200 front 270 (PN Conn_01x02))
     )
     (component "TO_SOT_Packages_THT:TO-220-4_Vertical"
       (place U2 92710 -76200 back 180 (PN KA378R33))
@@ -262,12 +261,12 @@
       (outline (path signal 120  22500 -5000  22500 -5400))
       (outline (path signal 120  -2840 -2900  -2840 -5740))
       (outline (path signal 120  -2840 -5740  0 -5740))
-      (pin Rect[A]Pad_2400x2400_um 1 0 0)
-      (pin Round[A]Pad_2400_um 2 5000 0)
-      (pin Round[A]Pad_2400_um 3 10000 0)
-      (pin Round[A]Pad_2400_um 4 15000 0)
-      (pin Round[A]Pad_2400_um 5 20000 0)
-      (pin Round[A]Pad_2400_um 6 25000 0)
+      (pin "Rect[A][0,-1800]Pad_3000x6000_um" 1 0 0)
+      (pin "Rect[A][0,-1800]Pad_3000x6000_um" 2 5000 0)
+      (pin "Rect[A][0,-1800]Pad_3000x6000_um" 3 10000 0)
+      (pin "Rect[A][0,-1800]Pad_3000x6000_um" 4 15000 0)
+      (pin "Rect[A][0,-1800]Pad_3000x6000_um" 5 20000 0)
+      (pin "Rect[A][0,-1800]Pad_3000x6000_um" 6 25000 0)
     )
     (image Pin_Headers:Pin_Header_Straight_2x01_Pitch2.54mm
       (outline (path signal 100  0 1270  3810 1270))
@@ -508,11 +507,6 @@
       (shape (circle B.Cu 1600))
       (attach off)
     )
-    (padstack Round[A]Pad_2400_um
-      (shape (circle F.Cu 2400))
-      (shape (circle B.Cu 2400))
-      (attach off)
-    )
     (padstack Oval[A]Pad_1700x1700_um
       (shape (path F.Cu 1700  0 0  0 0))
       (shape (path B.Cu 1700  0 0  0 0))
@@ -528,9 +522,9 @@
       (shape (path B.Cu 3500  0 0  0 0))
       (attach off)
     )
-    (padstack Rect[A]Pad_2400x2400_um
-      (shape (rect F.Cu -1200 -1200 1200 1200))
-      (shape (rect B.Cu -1200 -1200 1200 1200))
+    (padstack "Rect[A][0,-1800]Pad_3000x6000_um"
+      (shape (rect F.Cu -1500 -4800 1500 1200))
+      (shape (rect B.Cu -1500 -4800 1500 1200))
       (attach off)
     )
     (padstack Rect[A]Pad_1600x1600_um
@@ -559,7 +553,7 @@
       (pins C1-1 CN2-1 CN4-1 CN8-1 J1-1 U2-1 U2-4 U1-1)
     )
     (net GND
-      (pins C1-2 C2-2 CN1-4 CN2-2 CN4-6 CN6-1 CN7-13 CN8-6 U2-3 U1-2 C3-2)
+      (pins C1-2 C2-2 CN1-4 CN2-2 CN4-6 CN6-1 CN7-13 CN8-6 U2-3 U1-2 C3-2 J2-2)
     )
     (net 3V3e
       (pins C2-1 CN1-2 CN2-7 CN5-1 CN6-16 U2-2 U1-3 C3-1)
@@ -612,6 +606,9 @@
     (net VCCe
       (pins CN7-15 J1-2)
     )
+    (net MODEd
+      (pins CN5-2 J2-1)
+    )
     (class kicad_default ""
       (circuit
         (use_via Via[0-1]_600:400_um)
@@ -626,12 +623,12 @@
         (use_via Via[0-1]_600:400_um)
       )
       (rule
-        (width 500)
+        (width 1700)
         (clearance 200.1)
       )
     )
     (class SIG 3V3e AIN1 AIN2 BIN1 BIN2 GND IO05 IO18 IO19 IO21 IO22 IO32
-      IO33 VCCe Vin
+      IO33 MODEd VCCe Vin
       (circuit
         (use_via Via[0-1]_600:400_um)
       )
@@ -642,25 +639,30 @@
     )
   )
   (wiring
+    (wire (path B.Cu 400  92710 -76200  92710 -76835  93980 -78105  93980 -78740)(net Vin)(type protect))
+    (wire (path B.Cu 1700  82550 -87630  82550 -86360)(net Vin)(type protect))
+    (wire (path B.Cu 1700  87630 -81280  90170 -81280)(net Vin)(type protect))
+    (wire (path B.Cu 1700  82550 -86360  87630 -81280)(net Vin)(type protect))
     (wire (path B.Cu 1700  81280 -88900  77470 -88900)(net Vin)(type protect))
     (wire (path B.Cu 1700  82550 -87630  81280 -88900)(net Vin)(type protect))
-    (wire (path B.Cu 1700  88994.7 -81280  90061 -81280)(net Vin)(type protect))
-    (wire (path B.Cu 1700  84075.3 -86199.4  88994.7 -81280)(net Vin)(type protect))
-    (wire (path B.Cu 1700  84075.3 -87630  84075.3 -86199.4)(net Vin)(type protect))
-    (wire (path B.Cu 1700  82550 -87630  84075.3 -87630)(net Vin)(type protect))
-    (wire (path B.Cu 1700  90061 -81280  90170 -81280)(net Vin)(type protect))
+    (wire (path B.Cu 400  78740 -79280  85820 -79280  86360 -78740)(net GND)(type protect))
+    (wire (path B.Cu 400  96520 -78740  96520 -78105)(net GND)(type protect))
+    (wire (path B.Cu 400  97790 -76200  97790 -76835  96520 -78105)(net GND)(type protect))
+    (wire (path B.Cu 1700  102870 -81280  104775 -81280)(net GND)(type protect))
+    (wire (path B.Cu 1700  107550 -84055  107550 -87630)(net GND)(type protect))
+    (wire (path B.Cu 1700  104775 -81280  107550 -84055)(net GND)(type protect))
     (wire (path B.Cu 250  107550 -87630  107550 -87135.3)(net GND)(type protect))
-    (wire (path B.Cu 400  81259.8 -79280  78740 -79280)(net GND)(type protect))
-    (wire (path B.Cu 1700  102870 -82455.3  107550 -87135.3)(net GND)(type protect))
-    (wire (path B.Cu 1700  102870 -81280  102870 -82455.3)(net GND)(type protect))
-    (wire (path B.Cu 400  77450.4 -79990.4  78740 -81280)(net 3V3e)(type protect))
-    (wire (path F.Cu 1700  92710 -82470  92710 -81280)(net Aout1)(type protect))
-    (wire (path F.Cu 1700  87550 -87630  92710 -82470)(net Aout1)(type protect))
-    (wire (path F.Cu 1700  95250 -84930  95250 -81280)(net Aout2)(type protect))
-    (wire (path F.Cu 1700  92550 -87630  95250 -84930)(net Aout2)(type protect))
-    (wire (path F.Cu 1700  97790 -87390  97790 -81280)(net Bout1)(type protect))
+    (wire (path F.Cu 400  102858 -81280  102870 -81280)(net GND)(type protect))
+    (wire (path F.Cu 400  102858 -81280  102858 -80654.7)(net GND)(type protect))
+    (wire (path F.Cu 1700  92710 -81280  92710 -82470  90725 -84455)(net Aout1)(type protect))
+    (wire (path F.Cu 1700  87550 -85805  87550 -87630)(net Aout1)(type protect))
+    (wire (path F.Cu 1700  88900 -84455  87550 -85805)(net Aout1)(type protect))
+    (wire (path F.Cu 1700  90725 -84455  88900 -84455)(net Aout1)(type protect))
+    (wire (path F.Cu 1700  92550 -87630  92550 -86520  95250 -83820  95250 -81280)(net Aout2)(type protect))
+    (wire (path F.Cu 1700  97790 -81280  97790 -87390  97550 -87630)(net Bout1)(type protect))
     (wire (path F.Cu 250  97550 -87630  97790 -87390)(net Bout1)(type protect))
-    (wire (path F.Cu 1700  100330 -85410  100330 -81280)(net Bout2)(type protect))
-    (wire (path F.Cu 1700  102550 -87630  100330 -85410)(net Bout2)(type protect))
+    (wire (path F.Cu 1700  100330 -81280  100330 -82550)(net Bout2)(type protect))
+    (wire (path F.Cu 1700  102550 -84770  102550 -87630)(net Bout2)(type protect))
+    (wire (path F.Cu 1700  100330 -82550  102550 -84770)(net Bout2)(type protect))
   )
 )
