@@ -11,7 +11,7 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 687)
+    (start_pass_no 158)
     (layer_rule F.Cu
       (active on)
       (preferred_direction vertical)
@@ -96,7 +96,7 @@
     )
   )
   (class SIG
-    Vin GND 3V3e IO19 IO18 IO05 IO22 IO21
+    GND Vin 3V3e IO19 IO18 IO05 IO22 IO21
     AIN1 AIN2 BIN1 BIN2 IO32 IO33 VCCe MODEd
     (clearance_class SIG)
     (via_rule SIG)

@@ -49,12 +49,12 @@ $EndDescr
 $Comp
 L Conn_01x06 S1
 U 1 1 5EB9082C
-P 2950 1150
-F 0 "S1" H 2950 1450 50  0000 C CNN
-F 1 "Conn_01x06" H 2950 750 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 2950 1150 50  0001 C CNN
-F 3 "" H 2950 1150 50  0001 C CNN
-	1    2950 1150
+P 1200 1150
+F 0 "S1" H 1200 1450 50  0000 C CNN
+F 1 "Conn_01x06" H 1200 750 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 1200 1150 50  0001 C CNN
+F 3 "" H 1200 1150 50  0001 C CNN
+	1    1200 1150
 	0    1    -1   0   
 $EndComp
 $Comp
@@ -71,12 +71,12 @@ $EndComp
 $Comp
 L Conn_01x06 S3
 U 1 1 5EB908B2
-P 1200 1150
-F 0 "S3" H 1200 1450 50  0000 C CNN
-F 1 "Conn_01x06" H 1200 750 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 1200 1150 50  0001 C CNN
-F 3 "" H 1200 1150 50  0001 C CNN
-	1    1200 1150
+P 2950 1150
+F 0 "S3" H 2950 1450 50  0000 C CNN
+F 1 "Conn_01x06" H 2950 750 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 2950 1150 50  0001 C CNN
+F 3 "" H 2950 1150 50  0001 C CNN
+	1    2950 1150
 	0    1    -1   0   
 $EndComp
 $Comp
@@ -173,10 +173,6 @@ Text Notes 4100 850  0    118  ~ 0
 M5Stick
 Text Notes 700  850  0    118  ~ 0
 Sensor
-Text GLabel 4900 2050 2    60   Input ~ 0
-G26
-Text GLabel 4900 2150 2    60   Input ~ 0
-G00
 Text GLabel 4650 3850 2    60   Input ~ 0
 G32
 Text GLabel 4650 3950 2    60   Input ~ 0
@@ -185,9 +181,9 @@ Text GLabel 4450 3850 0    60   Input ~ 0
 SD1
 Text GLabel 4450 3950 0    60   Input ~ 0
 SD2
-Text GLabel 4650 3500 2    60   Input ~ 0
-G26
 Text GLabel 4650 3600 2    60   Input ~ 0
+G26
+Text GLabel 4650 3500 2    60   Input ~ 0
 G00
 Text GLabel 4450 3350 0    60   Input ~ 0
 VCC
@@ -406,4 +402,51 @@ Connection ~ 2100 1700
 Wire Wire Line
 	1100 1800 1100 1350
 Connection ~ 2000 1800
+$Comp
+L R R1
+U 1 1 5EC75A3F
+P 5200 2650
+F 0 "R1" V 5280 2650 50  0000 C CNN
+F 1 "R" V 5200 2650 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical" V 5130 2650 50  0001 C CNN
+F 3 "" H 5200 2650 50  0001 C CNN
+	1    5200 2650
+	1    0    0    -1  
+$EndComp
+Text GLabel 4900 2050 2    60   Input ~ 0
+SDA
+Text GLabel 4900 2150 2    60   Input ~ 0
+SCL
+Text GLabel 4650 2450 0    60   Input ~ 0
+3V3m
+Text GLabel 4650 2850 0    60   Input ~ 0
+SDA
+Text GLabel 4650 2950 0    60   Input ~ 0
+SCL
+Wire Wire Line
+	4650 2450 5400 2450
+Wire Wire Line
+	5200 2450 5200 2500
+Wire Wire Line
+	4650 2850 5200 2850
+Wire Wire Line
+	5200 2850 5200 2800
+$Comp
+L R R2
+U 1 1 5EC75CCF
+P 5400 2650
+F 0 "R2" V 5480 2650 50  0000 C CNN
+F 1 "R" V 5400 2650 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical" V 5330 2650 50  0001 C CNN
+F 3 "" H 5400 2650 50  0001 C CNN
+	1    5400 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 2450 5400 2500
+Connection ~ 5200 2450
+Wire Wire Line
+	5400 2800 5400 2950
+Wire Wire Line
+	5400 2950 4650 2950
 $EndSCHEMATC

@@ -46,8 +46,8 @@
       (place CN1 69850 -60960 back 0 (PN Conn_02x04_Odd_Even))
     )
     (component "Connectors_JST:JST_PH_B4B-PH-K_04x2.00mm_Straight"
-      (place CN2 75565 -50800 front 0 (PN Conn_01x04))
-      (place CN3 75565 -78105 front 0 (PN Conn_01x04))
+      (place CN2 81280 -50800 front 180 (PN Conn_01x04))
+      (place CN3 81280 -78105 front 180 (PN Conn_01x04))
     )
     (component Pin_Headers:Pin_Header_Angled_1x08_Pitch2.54mm
       (place CN4 73660 -55880 front 0 (PN Conn_01x08))
@@ -62,6 +62,10 @@
       (place H2 81915 -45720 front 0 (PN MountingHole_3.5mm))
       (place H3 64135 -83820 front 0 (PN MountingHole_3.5mm))
       (place H4 81915 -83820 front 0 (PN MountingHole_3.5mm))
+    )
+    (component Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical
+      (place R1 69850 -55245 front 180 (PN R))
+      (place R2 69850 -74295 front 180 (PN R))
     )
   )
   (library
@@ -304,9 +308,39 @@
       (keepout "" (circle F.Cu 3500))
       (keepout "" (circle B.Cu 3500))
     )
+    (image Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical
+      (outline (path signal 100  1250 0  1188.82 -386.271  1011.27 -734.732  734.732 -1011.27
+            386.271 -1188.82  0 -1250  -386.271 -1188.82  -734.732 -1011.27
+            -1011.27 -734.732  -1188.82 -386.271  -1250 0  -1188.82 386.271
+            -1011.27 734.732  -734.732 1011.27  -386.271 1188.82  0 1250
+            386.271 1188.82  734.732 1011.27  1011.27 734.732  1188.82 386.271))
+      (outline (path signal 120  1310 0  1245.88 -404.812  1059.81 -769.999  769.999 -1059.81
+            404.812 -1245.88  0 -1310  -404.812 -1245.88  -769.999 -1059.81
+            -1059.81 -769.999  -1245.88 -404.812  -1310 0  -1245.88 404.812
+            -1059.81 769.999  -769.999 1059.81  -404.812 1245.88  0 1310
+            404.812 1245.88  769.999 1059.81  1059.81 769.999  1245.88 404.812))
+      (outline (path signal 100  0 0  2540 0))
+      (outline (path signal 120  1310 0  1440 0))
+      (outline (path signal 50  -1600 1600  -1600 -1600))
+      (outline (path signal 50  -1600 -1600  3650 -1600))
+      (outline (path signal 50  3650 -1600  3650 1600))
+      (outline (path signal 50  3650 1600  -1600 1600))
+      (pin Round[A]Pad_1600_um 1 0 0)
+      (pin Oval[A]Pad_1600x1600_um 2 2540 0)
+    )
+    (padstack Round[A]Pad_1600_um
+      (shape (circle F.Cu 1600))
+      (shape (circle B.Cu 1600))
+      (attach off)
+    )
     (padstack Oval[A]Pad_1200x1700_um
       (shape (path F.Cu 1200  0 -250  0 250))
       (shape (path B.Cu 1200  0 -250  0 250))
+      (attach off)
+    )
+    (padstack Oval[A]Pad_1600x1600_um
+      (shape (path F.Cu 1600  0 0  0 0))
+      (shape (path B.Cu 1600  0 0  0 0))
       (attach off)
     )
     (padstack Oval[A]Pad_1700x1700_um
@@ -335,7 +369,7 @@
       (pins CN1-1 S1-6)
     )
     (net 3V3m
-      (pins CN1-2 CN3-2 CN4-7 S1-1 S2-1 S3-1)
+      (pins CN1-2 CN3-2 CN4-7 S1-1 S2-1 S3-1 R1-1 R2-1)
     )
     (net G32
       (pins CN1-3 CN2-3 S2-6)
@@ -347,13 +381,12 @@
       (pins CN1-5 CN2-4 S3-6)
     )
     (net G00
-      (pins CN1-6 CN3-4 CN4-5 S1-3 S2-3 S3-3)
+      (pins CN1-8 CN3-3 CN4-5 S1-4 S2-4 S3-4 R1-2)
     )
     (net G26
-      (pins CN1-8 CN3-3 CN4-3 S1-4 S2-4 S3-4)
+      (pins CN1-6 CN3-4 CN4-3 S1-3 S2-3 S3-3 R2-2)
     )
-    (class kicad_default "" 5Vim 5Vom BATm G36 "Net-(CN1-Pad7)" "Net-(CN2-Pad2)"
-      "Net-(S1-Pad5)" "Net-(S2-Pad5)" "Net-(S3-Pad5)"
+    (class kicad_default ""
       (circuit
         (use_via Via[0-1]_600:400_um)
       )
