@@ -537,11 +537,11 @@ Text GLabel 5400 2600 2    60   Input ~ 0
 SDA
 Text GLabel 5400 2700 2    60   Input ~ 0
 SCL
-Text GLabel 4500 2900 0    60   Input ~ 0
+Text GLabel 4500 2700 0    60   Input ~ 0
 SD0
 Text GLabel 4500 2800 0    60   Input ~ 0
 SD1
-Text GLabel 4500 2700 0    60   Input ~ 0
+Text GLabel 4500 2900 0    60   Input ~ 0
 SD2
 Wire Wire Line
 	4500 2700 4700 2700
@@ -708,7 +708,6 @@ Text GLabel 4650 3300 2    60   Input ~ 0
 Vin
 Text Notes 4400 3150 0    60   ~ 0
 to RC Car
-NoConn ~ 5400 1700
 $Comp
 L KA378R33 U2
 U 1 1 5EBD347C
@@ -758,4 +757,6 @@ Text GLabel 3300 3350 0    60   Input ~ 0
 GND
 Wire Wire Line
 	3300 3350 3400 3350
+Text GLabel 5400 1700 2    60   Input ~ 0
+IO05
 $EndSCHEMATC

@@ -98,11 +98,11 @@ Text GLabel 3450 1800 2    60   Input ~ 0
 SDA
 Text GLabel 3450 1700 2    60   Input ~ 0
 SCL
-Text GLabel 3450 2600 2    60   Input ~ 0
+Text GLabel 3450 2800 2    60   Input ~ 0
 SD0
 Text GLabel 3450 2700 2    60   Input ~ 0
 SD1
-Text GLabel 3450 2800 2    60   Input ~ 0
+Text GLabel 3450 2600 2    60   Input ~ 0
 SD2
 $Comp
 L Conn_01x08 CN4
