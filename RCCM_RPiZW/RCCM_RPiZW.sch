@@ -32,7 +32,6 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:RCCM_RPiZW-cache
-LIBS:RCCM_ESP32mini-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -100,21 +99,10 @@ L Conn_01x01 H1
 U 1 1 5EEAB2CB
 P 5500 5450
 F 0 "H1" H 5500 5550 50  0000 C CNN
-F 1 "M2.7-1" H 5500 5350 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.2mm_M3" H 5500 5450 50  0001 C CNN
+F 1 "M2.7" H 5500 5350 50  0000 C CNN
+F 2 "Mounting_Holes:MountingHole_2.7mm_M2.5" H 5500 5450 50  0001 C CNN
 F 3 "" H 5500 5450 50  0001 C CNN
 	1    5500 5450
-	1    0    0    -1  
-$EndComp
-$Comp
-L Conn_01x01 H2
-U 1 1 5EEAB2CC
-P 5500 5800
-F 0 "H2" H 5500 5900 50  0000 C CNN
-F 1 "M2.7-1" H 5500 5700 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.2mm_M3" H 5500 5800 50  0001 C CNN
-F 3 "" H 5500 5800 50  0001 C CNN
-	1    5500 5800
 	1    0    0    -1  
 $EndComp
 NoConn ~ 5300 5450
@@ -156,28 +144,6 @@ F 1 "Conn_02x20_Odd_Even" H 1750 5250 50  0000 C CNN
 F 2 "Socket_Strips:Socket_Strip_Straight_2x20_Pitch2.54mm" H 1700 6350 50  0001 C CNN
 F 3 "" H 1700 6350 50  0001 C CNN
 	1    1700 6350
-	1    0    0    -1  
-$EndComp
-$Comp
-L Conn_01x01 H3
-U 1 1 5EEAB2CE
-P 5500 6100
-F 0 "H3" H 5500 6200 50  0000 C CNN
-F 1 "M2.7-1" H 5500 6000 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.2mm_M3" H 5500 6100 50  0001 C CNN
-F 3 "" H 5500 6100 50  0001 C CNN
-	1    5500 6100
-	1    0    0    -1  
-$EndComp
-$Comp
-L Conn_01x01 H4
-U 1 1 5EEAB2CF
-P 5500 6450
-F 0 "H4" H 5500 6550 50  0000 C CNN
-F 1 "M2.7-1" H 5500 6350 50  0000 C CNN
-F 2 "Mounting_Holes:MountingHole_3.2mm_M3" H 5500 6450 50  0001 C CNN
-F 3 "" H 5500 6450 50  0001 C CNN
-	1    5500 6450
 	1    0    0    -1  
 $EndComp
 NoConn ~ 5300 6100
@@ -329,9 +295,9 @@ $EndComp
 Wire Notes Line
 	5150 5000 5150 7650
 Wire Notes Line
-	6050 5000 5150 5000
+	6600 5000 5150 5000
 Wire Notes Line
-	5150 7650 6050 7650
+	5150 7650 6600 7650
 Wire Notes Line
 	600  5000 600  7650
 Wire Notes Line
@@ -397,7 +363,7 @@ Wire Notes Line
 Wire Notes Line
 	5050 7650 5050 5000
 Wire Notes Line
-	6050 7650 6050 5000
+	6600 7650 6600 5000
 Wire Wire Line
 	1250 950  2450 950 
 Wire Wire Line
@@ -812,17 +778,6 @@ Text GLabel 10550 3000 2    60   Input ~ 0
 GND
 Text Notes 10300 2350 0    60   ~ 0
 to RC Car
-$Comp
-L KA378R33 IC1
-U 1 1 5EEAF30C
-P 1550 3150
-F 0 "IC1" H 1400 3375 50  0000 C CNN
-F 1 "KA378R33" H 1550 3375 50  0000 L CNN
-F 2 "TO_SOT_Packages_THT:TO-220-4_Vertical" H 1550 3450 50  0001 C CIN
-F 3 "" H 1550 3250 50  0001 C CNN
-	1    1550 3150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1000 3050 1250 3050
 Text GLabel 2400 3050 2    60   Input ~ 0
@@ -834,11 +789,7 @@ GND
 Wire Wire Line
 	1000 3550 2200 3550
 Wire Wire Line
-	1550 3550 1550 3450
-Wire Wire Line
-	1250 3150 1150 3150
-Wire Wire Line
-	1150 3050 1150 3200
+	1550 3550 1550 3350
 Connection ~ 1150 3050
 Text GLabel 10500 3300 0    60   Input ~ 0
 MODEd
@@ -859,7 +810,6 @@ Text GLabel 10500 3400 0    60   Input ~ 0
 GND
 Wire Wire Line
 	10500 3400 10600 3400
-Connection ~ 1150 3150
 Wire Wire Line
 	1150 3500 1150 3550
 Connection ~ 1150 3550
@@ -1010,5 +960,146 @@ Text GLabel 8400 1650 0    60   Input ~ 0
 Text GLabel 1000 3050 0    60   Input ~ 0
 VBat
 NoConn ~ 6100 2900
-NoConn ~ 1850 3050
+$Comp
+L LP2950-3.0_TO92 IC1
+U 1 1 5EEC3025
+P 1550 3050
+F 0 "IC1" H 1400 3175 50  0000 C CNN
+F 1 "LP2950-3.0_TO92" H 1550 3175 50  0000 L CNN
+F 2 "TO_SOT_Packages_THT:TO-92_Inline_Narrow_Oval" H 1550 3275 50  0001 C CIN
+F 3 "" H 1550 3000 50  0001 C CNN
+	1    1550 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1150 3200 1150 3050
+$Comp
+L Conn_01x03 SV1
+U 1 1 5EED503F
+P 7550 1050
+F 0 "SV1" H 7550 1250 50  0000 C CNN
+F 1 "Conn_01x03" H 7550 850 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 7550 1050 50  0001 C CNN
+F 3 "" H 7550 1050 50  0001 C CNN
+	1    7550 1050
+	1    0    0    -1  
+$EndComp
+Text GLabel 7000 950  0    60   Input ~ 0
+3V3
+Wire Wire Line
+	7000 950  7350 950 
+Text GLabel 7000 1050 0    60   Input ~ 0
+SV1
+Text GLabel 7000 1700 0    60   Input ~ 0
+SV2
+Wire Wire Line
+	7000 1050 7350 1050
+Text GLabel 7000 1150 0    60   Input ~ 0
+GND
+Wire Wire Line
+	7000 1150 7350 1150
+$Comp
+L Conn_01x03 SV2
+U 1 1 5EED54E8
+P 7550 1700
+F 0 "SV2" H 7550 1900 50  0000 C CNN
+F 1 "Conn_01x03" H 7550 1500 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 7550 1700 50  0001 C CNN
+F 3 "" H 7550 1700 50  0001 C CNN
+	1    7550 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7250 950  7250 1600
+Wire Wire Line
+	7250 1600 7350 1600
+Connection ~ 7250 950 
+Wire Wire Line
+	7100 1150 7100 1800
+Wire Wire Line
+	7100 1800 7350 1800
+Connection ~ 7100 1150
+Wire Wire Line
+	7000 1700 7350 1700
+$Comp
+L Conn_01x01 H5
+U 1 1 5EED5E65
+P 6200 5450
+F 0 "H5" H 6200 5550 50  0000 C CNN
+F 1 "M3.5" H 6200 5350 50  0000 C CNN
+F 2 "Mounting_Holes:MountingHole_3.5mm" H 6200 5450 50  0001 C CNN
+F 3 "" H 6200 5450 50  0001 C CNN
+	1    6200 5450
+	1    0    0    -1  
+$EndComp
+NoConn ~ 6000 5450
+NoConn ~ 6000 5800
+NoConn ~ 6000 6100
+NoConn ~ 6000 6450
+$Comp
+L Conn_01x01 H2
+U 1 1 5EED5FE8
+P 5500 5800
+F 0 "H2" H 5500 5900 50  0000 C CNN
+F 1 "M2.7" H 5500 5700 50  0000 C CNN
+F 2 "Mounting_Holes:MountingHole_2.7mm_M2.5" H 5500 5800 50  0001 C CNN
+F 3 "" H 5500 5800 50  0001 C CNN
+	1    5500 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Conn_01x01 H3
+U 1 1 5EED6057
+P 5500 6100
+F 0 "H3" H 5500 6200 50  0000 C CNN
+F 1 "M2.7" H 5500 6000 50  0000 C CNN
+F 2 "Mounting_Holes:MountingHole_2.7mm_M2.5" H 5500 6100 50  0001 C CNN
+F 3 "" H 5500 6100 50  0001 C CNN
+	1    5500 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Conn_01x01 H4
+U 1 1 5EED60C7
+P 5500 6450
+F 0 "H4" H 5500 6550 50  0000 C CNN
+F 1 "M2.7" H 5500 6350 50  0000 C CNN
+F 2 "Mounting_Holes:MountingHole_2.7mm_M2.5" H 5500 6450 50  0001 C CNN
+F 3 "" H 5500 6450 50  0001 C CNN
+	1    5500 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Conn_01x01 H6
+U 1 1 5EED61D6
+P 6200 5800
+F 0 "H6" H 6200 5900 50  0000 C CNN
+F 1 "M3.5" H 6200 5700 50  0000 C CNN
+F 2 "Mounting_Holes:MountingHole_3.5mm" H 6200 5800 50  0001 C CNN
+F 3 "" H 6200 5800 50  0001 C CNN
+	1    6200 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Conn_01x01 H7
+U 1 1 5EED6243
+P 6200 6100
+F 0 "H7" H 6200 6200 50  0000 C CNN
+F 1 "M3.5" H 6200 6000 50  0000 C CNN
+F 2 "Mounting_Holes:MountingHole_3.5mm" H 6200 6100 50  0001 C CNN
+F 3 "" H 6200 6100 50  0001 C CNN
+	1    6200 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Conn_01x01 H8
+U 1 1 5EED62B1
+P 6200 6450
+F 0 "H8" H 6200 6550 50  0000 C CNN
+F 1 "M3.5" H 6200 6350 50  0000 C CNN
+F 2 "Mounting_Holes:MountingHole_3.5mm" H 6200 6450 50  0001 C CNN
+F 3 "" H 6200 6450 50  0001 C CNN
+	1    6200 6450
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
